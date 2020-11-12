@@ -1,7 +1,7 @@
 const fs = require("fs");
 const mk = require("./regularExpression");
 //leer archivo
-const readDir = (file) => {
+const readFile = (file) => {
   fs.readFile(file, "utf-8", (err, data) => {
     if (err) {
       console.log(err);
@@ -10,4 +10,4 @@ const readDir = (file) => {
     }
   });
 };
-module.exports = readDir;
+module.exports = readFile;
