@@ -5,7 +5,7 @@ const chalk = require("chalk");
 module.exports = (validateLinks) => {
   const validateFetch = validateLinks.map((element) => {
     return fetch(element.links).then((res) => {
-      return console.log(`{
+      console.log(`{
         ${chalk.bgCyan.bold("href:")} ${chalk.cyan(res.url)},
         ${chalk.bgMagenta.bold("texto:")} ${chalk.magenta(element.texto)},
         ${chalk.bgGreen.bold("file:")}  ${chalk.green(element.file)},
