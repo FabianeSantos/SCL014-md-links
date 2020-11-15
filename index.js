@@ -1,19 +1,17 @@
-// module.exports = () => {
-//   // ...
-// };
+const validatePath = require("./md-links");
+const chalk = require("chalk");
+const validate = require("./validate");
 
-//instalar modulo axios
-const axios = require("axios");
+// variables personalizadas
+const pathFile = process.argv[2];
 
-const greet = (name) => "Hello" + name;
-// hacer una petición a una api, que contiene datos
-// me retorna una promesa
-const users = async () => {
-  const res = await axios.get(
-    "https://jsonplaceholder.typicode.com/users?_limit=2"
+// valida si el usuario ingresó alguna entrada. Si hay entrada, la valida.
+if (pathFile) {
+  validatePath(pathFile);
+} else {
+  console.log(
+    chalk.bgRed(
+      "¡Ingrese la ruta de un archivo de extensión markdown para empezar!"
+    )
   );
-  return res.data;
-};
-users().then((res) => console.log(res));
-
-module.exports = { users, greet };
+}
