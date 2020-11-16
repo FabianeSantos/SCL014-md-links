@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const mk = require("./regularExpression");
+const chalk = require("chalk");
 
 // valida la ruta del archivo
 const validatePath = (pathFile) => {
@@ -16,10 +17,10 @@ const validatePath = (pathFile) => {
   // valida si la ruta existe.
   fs.readFile(pathNormalize, "utf-8", (err, data) => {
     if (err) {
-      console.log("¡Esa no es una ruta valida!");
+      console.log(chalk.bgRed("¡Esa no es una ruta valida!"));
     } else {
       isMarkdown(data, pathNormalize);
-      console.log("data", data);
+      // console.log("data", data);
 
       console.log("readFile success", pathNormalize);
     }
@@ -34,7 +35,9 @@ const isMarkdown = (file, pathFile) => {
     mk(file, pathFile);
   } else {
     console.log(
-      "Extensión invalida. Ingrese una ruta de un archivo de extensión markdown"
+      chalk.bgRed(
+        "Extensión invalida. Ingrese una ruta de un archivo de extensión markdown"
+      )
     );
   }
 };

@@ -8,9 +8,9 @@ const mk = (file, pathFile) => {
   const linkArray = [];
 
   contentNoSpace.forEach((eachLine) => {
-    console.log("element -------------", eachLine);
+    // console.log("element -------------", eachLine);
     const links = eachLine.match(regexMdLinks);
-    console.log("links>>>>", links);
+    // console.log("links>>>>", links);
 
     // si es diferente de null es link!
     if (links !== null) {
