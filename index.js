@@ -12,20 +12,48 @@ if (
   (pathFile && firstArg === "--validate" && secondArg === "--stats") ||
   (firstArg === "--stats" && secondArg === "--validate")
 ) {
-  console.log("sou validate e stats");
-  // validatePath(pathFile);
+  console.log("validate y stats");
+  validatePath(pathFile)
+    .then((response) => {
+      console.log("index ---->", response);
+    })
+    .catch((error) => {
+      console.log(chalk.bgRed(error));
+    });
 } else if (pathFile && firstArg === "--validate") {
-  // validatePath(pathFile);
   console.log("sou validate");
+  validatePath(pathFile)
+    .then((response) => {
+      validateLinks(response);
+    })
+    .catch((error) => {
+      console.log(chalk.bgRed(error));
+    });
 } else if (pathFile && firstArg === "--stats") {
   console.log("sou stats");
-  // validatePath(pathFile);
-} else if (pathFile) {
   validatePath(pathFile)
-    .then((result) => {
-      console.log("sou ruta", result);
+    .then((response) => {
+      validateLinks(response, true);
     })
-    .catch(error);
+    .catch((error) => {
+      console.log(chalk.bgRed(error));
+    });
+} else if (pathFile) {
+  console.log("sou ruta");
+  validatePath(pathFile)
+    .then((response) => {
+      console.log("index ---->");
+      response.map((res) => {
+        console.log(`{
+          ${chalk.bgCyan.bold("href:")} ${chalk.cyan(res.url)},
+          ${chalk.bgMagenta.bold("text:")} ${chalk.magenta(res.texto)},
+          ${chalk.bgGreen.bold("file:")}  ${chalk.green(res.file)},
+         } `);
+      });
+    })
+    .catch((error) => {
+      console.log(chalk.bgRed(error));
+    });
 } else {
   console.log(
     chalk.bgRed(
