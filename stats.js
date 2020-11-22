@@ -23,9 +23,9 @@ const stats = (links) => {
   linksBroken = linksBroken.length;
 
   console.log(`
-  ${chalk.bgCyan.bold("Total:")} ${chalk.cyan(linksTotal)},
-  ${chalk.bgMagenta.bold("Unique:")} ${chalk.magenta(linksUnique)},
-  ${chalk.bgGreen.bold("Broken:")} ${chalk.green(linksBroken)},
+          ${chalk.bgCyan.bold("Total:")} ${chalk.cyan(linksTotal)},
+          ${chalk.bgMagenta.bold("Unique:")} ${chalk.magenta(linksUnique)},
+          ${chalk.bgGreen.bold("Broken:")} ${chalk.green(linksBroken)},
   
   `);
 
