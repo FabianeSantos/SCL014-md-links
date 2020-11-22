@@ -44,11 +44,11 @@ if (
     .then((response) => {
       // console.log("index ---->");
       response.map((res) => {
-        console.log(`{
+        console.log(`
           ${chalk.bgCyan.bold("href:")} ${chalk.cyan(res.links)},
           ${chalk.bgMagenta.bold("text:")} ${chalk.magenta(res.texto)},
           ${chalk.bgGreen.bold("file:")}  ${chalk.green(res.file)},
-         } `);
+          `);
       });
     })
     .catch((error) => {

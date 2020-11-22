@@ -17,13 +17,13 @@ const validateLinks = (linkArray, isStats) => {
         stats(linksWithStatus);
       } else {
         // validate
-        console.log(`{
+        `
           ${chalk.bgCyan.bold("href:")} ${chalk.cyan(res.url)},
           ${chalk.bgMagenta.bold("text:")} ${chalk.magenta(element.texto)},
           ${chalk.bgGreen.bold("file:")}  ${chalk.green(element.file)},
           ${chalk.bgBlue.bold("status:")}  ${chalk.blue(res.status)} ,
           ${chalk.bgYellow.bold("statusText:")}  ${chalk.yellow(res.statusText)}
-         } `);
+         `;
       }
     });
   });
