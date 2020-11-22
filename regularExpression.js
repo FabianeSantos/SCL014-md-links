@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const validateLinks = require("./validate");
-const mk = (file, pathFile) => {
+const getLinks = (file, pathFile) => {
   console.log("cheguei");
   const contentNoSpace = file.split("\n");
 
@@ -28,6 +28,7 @@ const mk = (file, pathFile) => {
       }
     }
   });
-  validateLinks(linkArray);
+  return linkArray;
+  // validateLinks(linkArray);
 };
-module.exports = mk;
+module.exports = getLinks;

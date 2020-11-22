@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const mk = require("./regularExpression");
+const getLinks = require("./regularExpression");
 const chalk = require("chalk");
 
 // valida la ruta del archivo
@@ -32,7 +32,7 @@ const isMarkdown = (file, pathFile) => {
   console.log(path.extname(pathFile));
   if (path.extname(pathFile) === ".md") {
     console.log("readFile");
-    mk(file, pathFile);
+    getLinks(file, pathFile);
   } else {
     console.log(
       chalk.bgRed(

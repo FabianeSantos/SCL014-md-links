@@ -21,8 +21,11 @@ if (
   console.log("sou stats");
   // validatePath(pathFile);
 } else if (pathFile) {
-  console.log("sou ruta");
-  validatePath(pathFile);
+  validatePath(pathFile)
+    .then((result) => {
+      console.log("sou ruta", result);
+    })
+    .catch(error);
 } else {
   console.log(
     chalk.bgRed(
