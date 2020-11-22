@@ -7,11 +7,11 @@ const chalk = require("chalk");
 const validatePath = (pathFile) => {
   // arregla el formato de la ruta link documentacion: https://nodejs.org/api/path.html#path_path_resolve_paths
   let pathResolve = path.resolve(pathFile);
-  console.log("resolve ruta", pathResolve);
+  // console.log("resolve ruta", pathResolve);
 
   // normaliza la ruta (ej.: //-> /) link documentación: https://nodejs.org/api/path.html#path_path_normalize_path
   let pathNormalize = path.normalize(pathResolve);
-  console.log("normalize ruta", pathNormalize);
+  // console.log("normalize ruta", pathNormalize);
 
   // ja resolvi y normalizei. Preciso saber se é um arquivo ou diretorio.
   // valida si la ruta existe.
@@ -23,7 +23,7 @@ const validatePath = (pathFile) => {
         resolve(isMarkdown(data, pathNormalize));
         // console.log("data", data);
 
-        console.log("readFile success", pathNormalize);
+        // console.log("readFile success", pathNormalize);
       }
     });
   });
@@ -32,9 +32,9 @@ const validatePath = (pathFile) => {
 // verificar cual es la extensión
 const isMarkdown = (file, pathFile) => {
   let result;
-  console.log(path.extname(pathFile));
+  // console.log(path.extname(pathFile));
   if (path.extname(pathFile) === ".md") {
-    console.log("readFile");
+    // console.log("readFile");
     result = mk(file, pathFile);
     return result;
   } else {

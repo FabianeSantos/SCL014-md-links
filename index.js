@@ -21,7 +21,7 @@ if (
       console.log(chalk.bgRed(error));
     });
 } else if (pathFile && firstArg === "--validate") {
-  console.log("sou validate");
+  // console.log("sou validate");
   validatePath(pathFile)
     .then((response) => {
       validateLinks(response);
@@ -30,7 +30,7 @@ if (
       console.log(chalk.bgRed(error));
     });
 } else if (pathFile && firstArg === "--stats") {
-  console.log("sou stats");
+  // console.log("sou stats");
   validatePath(pathFile)
     .then((response) => {
       validateLinks(response, true);
@@ -39,13 +39,13 @@ if (
       console.log(chalk.bgRed(error));
     });
 } else if (pathFile) {
-  console.log("sou ruta");
+  // console.log("sou ruta");
   validatePath(pathFile)
     .then((response) => {
-      console.log("index ---->");
+      // console.log("index ---->");
       response.map((res) => {
         console.log(`{
-          ${chalk.bgCyan.bold("href:")} ${chalk.cyan(res.url)},
+          ${chalk.bgCyan.bold("href:")} ${chalk.cyan(res.links)},
           ${chalk.bgMagenta.bold("text:")} ${chalk.magenta(res.texto)},
           ${chalk.bgGreen.bold("file:")}  ${chalk.green(res.file)},
          } `);

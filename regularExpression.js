@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const validateLinks = require("./validate");
 const mk = (file, pathFile) => {
-  console.log("cheguei");
+  // console.log("cheguei");
   const contentNoSpace = file.split("\n");
 
   const regexMdLinks = /\[([^\[]+)\](\(.*\))/gm;
@@ -23,7 +23,7 @@ const mk = (file, pathFile) => {
             texto: text[1].slice(0, 51).toUpperCase(),
             file: pathFile,
           });
-          console.log("text", text[1]);
+          // console.log("text", text[1]);
         }
       }
     }
