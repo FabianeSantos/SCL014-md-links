@@ -1,5 +1,3 @@
-\*blue
-
 # fs-md-links
 
 ### validador de links en archivos con extensión markdown.

@@ -8,14 +8,26 @@ const firstArg = process.argv[3];
 const secondArg = process.argv[4];
 
 // valida si el usuario ingresó alguna entrada. Si hay entrada, la valida.
-if (
-  (pathFile && firstArg === "--validate" && secondArg === "--stats") ||
-  (firstArg === "--stats" && secondArg === "--validate")
-) {
-  console.log("validate y stats");
+if (pathFile && firstArg === "--stats" && secondArg === "--validate") {
+  // console.log("validate y stats");
   validatePath(pathFile)
     .then((response) => {
-      console.log("index ---->", response);
+      validateLinks(response, true);
+      validatePath(pathFile).then((response) => {
+        validateLinks(response);
+      });
+    })
+    .catch((error) => {
+      console.log(chalk.bgRed(error));
+    });
+} else if (pathFile && firstArg === "--validate" && secondArg === "--stats") {
+  // console.log("validate y stats");
+  validatePath(pathFile)
+    .then((response) => {
+      validatePath(pathFile).then((response) => {
+        validateLinks(response);
+      });
+      validateLinks(response, true);
     })
     .catch((error) => {
       console.log(chalk.bgRed(error));
