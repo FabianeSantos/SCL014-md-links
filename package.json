@@ -1,6 +1,6 @@
 {
   "name": "fs-md-links",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": " validador de links",
   "main": "index.js",
   "directories": {
@@ -24,6 +24,9 @@
   "keywords": [],
   "author": "Fabiane Santos <fabianesantos.developer@gmail.com>",
   "license": "ISC",
+  "bin": {
+    "fs-md-links":"index.js"
+  },
   "bugs": {
     "url": "https://github.com/FabianeSantos/SCL014-md-links/issues"
   },

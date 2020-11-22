@@ -1,4 +1,4 @@
-# ![fs-md-links](img/logo-md-links.png)
+# ![fs-md-links](img/logo-mdlinks.png)
 
 #
 
@@ -75,4 +75,4 @@ En este ejemplo hay 1 link, donde el link es ú-nico y no está roto, o sea, el 
 
 ## Autora:
 
-#### [Fabiane Santos](https://github.com/FabianeSssssantos?tab=repositories)
+#### [Fabiane Santos](https://github.com/FabianeSantos?tab=repositories)

@@ -73,3 +73,5 @@ if (pathFile && firstArg === "--stats" && secondArg === "--validate") {
     )
   );
 }
+
+// console.table(Object.entries(console).sort());
