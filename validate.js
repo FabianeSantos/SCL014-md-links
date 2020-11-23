@@ -4,7 +4,7 @@ const chalk = require("chalk");
 
 const validateLinks = (linkArray, isStats) => {
   let linksWithStatus = [];
-  linkArray.map((element) => {
+  linkArray.map((element, i) => {
     return fetch(element.links).then((res) => {
       linksWithStatus.push({
         href: res.url,
@@ -13,11 +13,16 @@ const validateLinks = (linkArray, isStats) => {
         status: res.status,
         response: res.statusText,
       });
+      // console.log("size", linkArray.length);
+      // console.log("index", i);
+      // console.log("logica", i === linkArray.length - 1);
       if (isStats) {
-        stats(linksWithStatus);
+        if (i === linkArray.length - 1) {
+          stats(linksWithStatus);
+        }
       } else {
         // validate
-        console.log(`
+        console.log(`{
           ${chalk.bgCyan.bold("href:")} ${chalk.cyan(res.url)},
           ${chalk.bgMagenta.bold("text:")} ${chalk.magenta(element.texto)},
           ${chalk.bgGreen.bold("file:")}  ${chalk.green(element.file)},
@@ -26,9 +31,9 @@ const validateLinks = (linkArray, isStats) => {
             res.statusText === "OK"
               ? chalk.bgYellow.bold("statusText:") +
                 chalk.yellow(res.statusText)
-              : chalk.bgRed.bold("statusText:") + chalk.red(res.statusText)
+              : chalk.bgRed.bold("statusText: ") + chalk.red(res.statusText)
           }
-         `);
+         } `);
       }
     });
   });

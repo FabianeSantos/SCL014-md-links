@@ -1,6 +1,6 @@
 {
   "name": "fs-md-links",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": " validador de links",
   "main": "index.js",
   "directories": {
